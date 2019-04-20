@@ -1,0 +1,3 @@
+
+// Unrelated to heap and such but is relavent elsewhere
+//    Use mmap to map a file and use that to steralize info maybe, how to grow files, allocate more pages, when mmap is closed reopen file and truncate? idk how it works
