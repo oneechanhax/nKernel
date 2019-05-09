@@ -16,6 +16,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
- 
+
 // TODO, try to keep a core open and avaiable for the kernel and more important processes to avoid one mallicious process from eating all the cpu time
 // Keep in mind the blocked threads and their requirements to be unblocked, it would be best to get those up and running stat
+
+namespace threads {
+
+}

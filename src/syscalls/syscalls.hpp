@@ -1,6 +1,6 @@
 
 /*
- * nKernel: Magical kernel for magical needs
+ * nKernel: A Magical kernel for magical needs
  * Copyright (C) 2019 Rebekah Rowe
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace threads {
+#pragma once
+// Needed syscalls
+// https://forum.osdev.org/viewtopic.php?f=15&t=29465
 
-}
+#include
