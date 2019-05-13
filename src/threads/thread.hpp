@@ -27,12 +27,13 @@ class Process;
 class Thread {
 public:
     enum class State { kRunning, kIdle, kForcePreempt };
-    State state = State::kRunning;
+    State state = kIdle;
     Process* parent = nullptr;
     int8_t nice = 0;
 
     void ForcePreempt(); // Make sure you keep track of forced processes
-    static void Terminate();
+    void Resume();
+    void Terminate();
 private:
     static std::vector<Thread> list;
 };

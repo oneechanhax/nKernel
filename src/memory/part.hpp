@@ -17,27 +17,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-class Process {
-public:
-    Process(const char* file, ) {
-        // Load process into memory?
-        // Load the dynamic loader thing?
-        // Run _start?
-    }
-    ~Process() {
-        // What to do here?
-    }
-    // If the process slot is currently active
-    bool active = true;
+#pragma once
 
-    // Memory
-    mem::Map memory_map;// Replace this with the actual map or use something else?
+// Part is just a remapped header
+
+namespace mem {
+
+class InternalMap {
+public:
+    // Check memory
+    void CheckMemory
+
     // Safe retrieval functions
     GetData()
     GetString()
-
-private:
-    // TODO: Tree/map this
-    static inline std::vector<Process> list;
-    static inline std::vector<Process*> active_list; // Cached list of active processes
 };
+
+}

@@ -18,3 +18,5 @@
  */
 
 #pragma once
+
+#if x
