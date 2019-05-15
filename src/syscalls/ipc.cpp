@@ -17,8 +17,23 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "ipc.hpp"
 
-namespace mem {
+// A thread listening for input
+class Listener {
+public:
+    // Register a new listener
+    void Register(std::string_view, Thread*)
+ private:
+    // Multiple threads can listen to the same connection for multi-threading
+    std::queue<Thread*> waiting;
+};
 
-}
+// Servers
+static inline std::unordered_map<std::string, Listener> servers;
+
+// 
+int ipc_connect(std::string_view);
+
+int ipc_send(std::string);
+std::string ipc_recieve();

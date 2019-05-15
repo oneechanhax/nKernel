@@ -17,19 +17,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "ipc.hpp"
 
-namespace mem {
+#include "files.hpp"
 
-class Map {
-public:
-    // Check memory
-    void CheckMemory
+namespace syscall {
 
-    // Safe retrieval functions
-    GetData()
-    GetString()
+int open(std::string_view pathname, int flags, mode_t mode){
+    
+}
 
-private:
-    std::mutex safe_handle;
 }

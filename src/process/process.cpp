@@ -32,12 +32,39 @@ public:
 
     // Memory
     mem::Map memory_map;// Replace this with the actual map or use something else?
-    // Safe retrieval functions
-    GetData()
-    GetString()
 
+    // Syscall utils
+    std::vector<std::string> syscall_strings;
+
+    // Global process utils
+    static int ClaimOpen();
+    void Close();
 private:
     // TODO: Tree/map this
-    static inline std::vector<Process> list;
-    static inline std::vector<Process*> active_list; // Cached list of active processes
+    static std::mutex list_lock;
+    static std::vector<Process> list;
+    static std::vector<Process*> active_list; // Cached list of active processes
 };
+
+void Process::Close() {
+    std::lock_guard<std::mutex> guard(list_lock);
+
+    // Remove from active cache
+    auto find = std::find(active_list.begin(), active_list.end(), this);
+    assert(find != active_list.end());
+    active_list.erase(find);
+
+    // Ensure all threads are closed
+    Thread::Terminate(this);
+
+    // TODO, need to do something with the memory map???
+
+    // Free unused memory
+    if (&list.back() == this) {
+        list.pop_back();
+    } else {
+        // Clear out all of our strings since its unused
+        syscall_strings.clear();
+        
+    }
+}

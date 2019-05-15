@@ -34,7 +34,9 @@ public:
     void ForcePreempt(); // Make sure you keep track of forced processes
     void Resume();
     void Terminate();
+    void Terminate(Process*); // Terminate all for a process
 private:
+    std::mutex list_lock;
     static std::vector<Thread> list;
 };
 

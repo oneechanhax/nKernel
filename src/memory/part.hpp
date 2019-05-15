@@ -25,12 +25,7 @@ namespace mem {
 
 class InternalMap {
 public:
-    // Check memory
-    void CheckMemory
-
-    // Safe retrieval functions
-    GetData()
-    GetString()
+    
 };
 
 }

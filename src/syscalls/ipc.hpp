@@ -17,13 +17,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// A thread listening for input
-class Listener {
-public:
-    // Register a new listener
-    void Register(std::string_view, Thread*)
-private:
-    // Multiple threads can listen to the same connection for multi-threading
-    std::queue<Thread*>
-    static std::unordered_map<std::string, Listener> list;
-};
+#pragma once
+
+namespace syscall {
+
+int ipc_connect(std::string_view);
+
+int ipc_send(std::string_view);
+std::string ipc_recieve();
+
+}
