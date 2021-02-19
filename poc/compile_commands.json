@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/oneechanhax/nkernel/poc/build",
+  "command": "/usr/bin/clang++  -I/home/oneechanhax/nkernel/poc/src -I/home/oneechanhax/nkernel/poc/etl/include -target i686-elf -Wall -Wextra -std=gnu++20 -o CMakeFiles/nkernel-poc.dir/src/entry.cpp.o -c /home/oneechanhax/nkernel/poc/src/entry.cpp",
+  "file": "/home/oneechanhax/nkernel/poc/src/entry.cpp"
+}
+]
